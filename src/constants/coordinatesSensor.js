@@ -1,22 +1,11 @@
 import {getRandomTime} from "./getRandomTime";
 import {getRandomDate} from "./getRandomDate";
 
-// abu dabi
 const latitude = 24.400745;
 const longitude = 54.382988;
 
-// astana
-// const latitude = 51.140528;
-// const longitude = 71.413961;
-
-// saudi
-// const latitude = 24.556808;
-// const longitude = 46.885250;
-
-
-
 const numberOfPoints = 5;
-const maxOffset = 10 / 111.32; // Переведення градусів в кілометри (приблизно)
+const maxOffset = 10 / 111.32;
 
 export const randomCoordinatesSensors = Array.from({length: numberOfPoints}, () => ({
     latitude: latitude + (Math.random() * 2 - 1) * maxOffset,

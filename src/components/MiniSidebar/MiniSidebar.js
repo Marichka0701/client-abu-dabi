@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 import styles from './MiniSidebar.module.scss';
 import logo from '../../constants/images/miniSidebar/abu-dabi.png';
 import menu from '../../constants/images/miniSidebar/menu.png';
 import menuActive from '../../constants/images/miniSidebar/menu-active.png';
-import dron from '../../constants/images/miniSidebar/dron.png';
-import dronActive from '../../constants/images/miniSidebar/dron-active.png';
+import drone from '../../constants/images/miniSidebar/dron.png';
+import droneActive from '../../constants/images/miniSidebar/dron-active.png';
 import history from '../../constants/images/miniSidebar/history.png';
 import historyActive from '../../constants/images/miniSidebar/history-active.png';
 
@@ -29,7 +29,7 @@ const MiniSidebar = ({selectedOption, setSelectedOption}) => {
                     onClick={() => setSelectedOption('drone')}
                     className={`${styles.miniSidebar_options_item} ${selectedOption === 'drone' && styles.active}`}
                 >
-                    <img src={selectedOption === 'drone' ? dronActive : dron} alt="drone icon"/>
+                    <img src={selectedOption === 'drone' ? droneActive : drone} alt="drone icon"/>
                 </div>
 
                 <div

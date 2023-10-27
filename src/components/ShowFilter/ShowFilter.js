@@ -1,5 +1,4 @@
 import React from 'react';
-import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 
@@ -11,9 +10,6 @@ const ShowFilter = ({
                         setWhiteDronesChecked, setBlackDronesChecked, setRadarsChecked
                     }) => {
 
-    console.log(whiteDronesChecked)
-    console.log(blackDronesChecked)
-    console.log(radarsChecked)
     return (
         <div className={styles.showFilter}>
             <h2>Show on Map</h2>
@@ -31,10 +27,6 @@ const ShowFilter = ({
                     control={<Switch checked={radarsChecked} onChange={() => setRadarsChecked(!radarsChecked)} />}
                     label="Radars"
                 />
-                {/*<FormControlLabel control={<Switch defaultChecked/>} label="White Drones"/>*/}
-                {/*<FormControlLabel control={<Switch defaultChecked/>} label="Black Drones"/>*/}
-                {/*<FormControlLabel control={<Switch defaultChecked/>} label="Radars"/>*/}
-                {/*<Switch aria-label={'sdnfn'} defaultChecked />*/}
             </div>
         </div>
     );

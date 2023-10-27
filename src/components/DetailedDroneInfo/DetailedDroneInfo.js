@@ -28,9 +28,7 @@ const DetailedDroneInfo = ({setModalIsOpen, drone}) => {
 
                    <div className={styles.detailedDroneInfo_flightDetails_coordinates}>
                        <p>{`${drone?.startPosition[0].toFixed(6)}, ${drone?.startPosition[1].toFixed(6)}`}</p>
-                       {/*<p>71.413961, 51.140528 </p> // астана*/}
                        <p>{process.env.REACT_APP_ABU_DABI_LONGITUDE}, {process.env.REACT_APP_ABU_DABI_LATITUDE}</p>
-                       {/*<p>54.382988, 24.400745 </p> // абу дабі*/}
                    </div>
                </div>
 
@@ -47,8 +45,6 @@ const DetailedDroneInfo = ({setModalIsOpen, drone}) => {
                        <div className={styles.block}>
                            <p className={styles.subtitle}>End Position</p>
                            <p className={styles.info}>{process.env.REACT_APP_ABU_DABI_LONGITUDE}, {process.env.REACT_APP_ABU_DABI_LATITUDE}</p>
-                           {/*<p className={styles.info}>71.413961, 51.140528 </p> // astana*/}
-                           {/*<p className={styles.info}>54.382988, 24.400745</p> // абу дабі*/}
                        </div>
                        <div className={styles.block}>
                            <p className={styles.subtitle}>Max Height</p>

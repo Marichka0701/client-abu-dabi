@@ -13,26 +13,9 @@ const dronesHistorySlice = createSlice({
     name: 'dronesHistorySlice',
     initialState,
     reducers: {
-
-
         setWhiteDrones: (state, action) => {
             state.whiteDrones.push(action.payload);
             state.activeDrones = [...state.activeDrones, state.whiteDrones];
-
-            // console.log(state.selectedDroneId, 'selectedDroneId')
-            // console.log(action.payload, 'action.payload')
-            // const objWithSelectedDroneId = state.whiteDrones.filter(item => item.droneId === state.selectedDroneId);
-            // console.log(objWithSelectedDroneId);
-            // const otherObjects = state.whiteDrones.filter(item => item.droneId !== state.selectedDroneId);
-            // console.log(otherObjects);
-            // console.log([objWithSelectedDroneId, ...otherObjects]);
-            // state.whiteDrones = [objWithSelectedDroneId, ...otherObjects];
-
-            // state.whiteDrones = state.whiteDrones.sort((a, b) => {
-            //     if (a.droneId === state.selectedDroneId) return -1; // Помістити об'єкт з id 42 на перше місце
-            //     if (b.droneId === state.selectedDroneId) return 1;
-            //     return 0;
-            // });
         },
         removeWhiteDrones: (state, action) => {
             state.whiteDrones = state.whiteDrones.filter((drone) => drone.droneId !== action.payload);

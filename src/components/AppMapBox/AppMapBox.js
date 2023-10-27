@@ -12,6 +12,7 @@ import {dronesHistoryActions} from '../../store/slices/dronesHistorySlice';
 import whiteDrone from '../../constants/images/white-drone.png';
 import blackDrone from '../../constants/images/black-drone.png';
 import selectedWhiteDrone from '../../constants/images/selected-white-drone.png';
+import selectedBlackDrone from '../../constants/images/selected-black-drone.png';
 import ShowFilter from '../ShowFilter/ShowFilter';
 
 const AppMapBox = ({selectedOption}) => {
@@ -274,7 +275,7 @@ const AppMapBox = ({selectedOption}) => {
                     dispatch(dronesHistoryActions.setSelectedDroneId(droneId));
 
                     const droneImageName = `black_drone_${droneId}`;
-                    mapRef.current.loadImage(selectedWhiteDrone, (error, image) => {
+                    mapRef.current.loadImage(selectedBlackDrone, (error, image) => {
                         if (error)
                             throw error;
 

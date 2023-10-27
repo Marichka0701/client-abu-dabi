@@ -1,0 +1,15 @@
+@mixin flex_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin drones_list {
+  width: 100%;
+  max-height: calc(100vh - 136px);
+  box-sizing: border-box;
+  overflow-y: auto;
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+}

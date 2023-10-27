@@ -1,0 +1,73 @@
+@import "src/utils/reset";
+@import "src/utils/mixins";
+
+.appMap, .mapboxgl-map {
+  width: 100%;
+  //width: calc(100vw - 440px);
+  //height: 100vh;
+  position: relative;
+}
+
+.mapboxgl-canvas {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+#map > div.mapboxgl-canvas-container.mapboxgl-interactive.mapboxgl-touch-drag-pan.mapboxgl-touch-zoom-rotate > canvas {
+  //width: 100%;
+  //height: 100%;
+  width: 1343.2px;
+  height: 999.2px;
+}
+
+.mapContainer {
+  width: 100%;
+  height: 100%;
+}
+
+.marker {
+  //position: relative;
+  display: block;
+  border: none;
+  /*border-radius: 50%;*/
+  cursor: pointer;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.markerContainer {
+  position: relative;
+}
+
+//.mapboxgl-popup {
+//  width: 320px;
+//}
+
+.mapboxgl-popup-content {
+  width: 320px;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+.mapboxgl-popup-close-button {
+  right: 12px;
+  top: 12px;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  color: #9CA8B4;
+
+  &:hover {
+    background: transparent;
+  }
+}

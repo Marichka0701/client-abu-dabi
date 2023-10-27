@@ -1,0 +1,50 @@
+@import "src/utils/reset";
+@import "src/utils/mixins";
+
+.lineChart {
+  width: calc(100% / 3);
+  padding: 16px 20px;
+  display: flex;
+  gap: 20px;
+  border-radius: 16px;
+  border: 1px solid var(--border-light);
+  background: var(--white);
+  box-shadow: 0 5px 4px -4px rgba(0, 0, 0, 0.02), 0 1px 2px 0px rgba(0, 0, 0, 0.06);
+
+  &_chart,  &_description {
+    width: 50%;
+  }
+
+  &_description {
+    min-width: 165px;
+
+    &_title {
+      color: var(--text-darkblue-modal);
+      font-family: Inter, sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 28px; /* 155.556% */
+      letter-spacing: -0.256px;
+      margin-bottom: 16px;
+    }
+
+    &_number {
+      color: var(--text-darkblue-modal);
+      font-family: Inter, sans-serif;
+      font-size: 36px;
+      font-weight: 600;
+      line-height: 44px; /* 122.222% */
+      letter-spacing: -0.784px;
+      margin-bottom: 8px;
+    }
+
+    &_label {
+      color: var(--text-gray-modal-subtitle);
+      font-family: Inter, sans-serif;
+      font-size: 12px;
+      font-weight: 450;
+      line-height: 18px; /* 150% */
+      letter-spacing: 0.016px;
+    }
+  }
+}

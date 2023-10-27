@@ -1,0 +1,48 @@
+@import "src/utils/reset";
+@import "src/utils/mixins";
+
+.modalSensor {
+  padding: 12px;
+  width: 320px;
+  border-radius: 6px;
+  background: var(--white);
+
+  & > h2 {
+    color: var(--text-darkblue-modal);
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-weight: 550;
+    line-height: 22px; /* 157.143% */
+    letter-spacing: -0.128px;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  &_sensor {
+    padding: 8px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &_position, &_height, &_placementTime, &_placementDate {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .subtitle {
+        color: var(--text-gray-modal-subtitle);
+        font-family: Inter, sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+      }
+
+      .info {
+        color: var(--text-darkblue-modal);
+        font-family: Inter, sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+      }
+    }
+  }
+}

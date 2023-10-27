@@ -1,0 +1,46 @@
+@import "src/utils/reset";
+@import "src/utils/mixins";
+
+.miniSidebar {
+  padding: 16px;
+  width: 80px;
+  min-height: 100vh;
+  height: 100%;
+  border-right: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  &_ad {
+    @include flex_center;
+    position: relative;
+
+    & > span {
+      position: absolute;
+      top: 35%;
+      left: 30%;
+      color: var(--white);
+      font-family: Inter, sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+    }
+  }
+
+  &_options {
+    @include flex_center;
+    flex-direction: column;
+    gap: 8px;
+
+    &_item {
+      padding: 12px;
+      border-radius: 12px;
+      background: var(--white);
+      transition: 0.3s;
+
+      &.active {
+        transition: 0.3s;
+        background: var(--hover-lighblue);
+      }
+    }
+  }
+}

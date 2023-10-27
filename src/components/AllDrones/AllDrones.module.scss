@@ -1,0 +1,6 @@
+@import "src/utils/reset";
+@import "src/utils/mixins";
+
+.allDrones {
+  @include drones_list;
+}

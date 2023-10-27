@@ -1,0 +1,17 @@
+@import "src/utils/reset";
+@import "src/utils/mixins";
+
+.recharts-tooltip-wrapper.recharts-tooltip-wrapper-right.recharts-tooltip-wrapper-bottom > div {
+  border-radius: 10px !important;
+}
+
+div > div> div > div > div > svg > g.recharts-layer.recharts-cartesian-axis.recharts-xAxis.xAxis > g > g > text,
+div > div > div > div > div > svg > g.recharts-layer.recharts-cartesian-axis.recharts-yAxis.yAxis > g > g > text {
+  color: var(--text-gray-modal-subtitle);
+  text-align: center;
+  font-family: Inter, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px; /* 150% */
+  letter-spacing: 0.016px;
+}

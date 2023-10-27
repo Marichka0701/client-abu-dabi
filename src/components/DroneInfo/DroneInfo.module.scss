@@ -1,0 +1,79 @@
+@import "src/utils/reset";
+@import "src/utils/mixins";
+
+.droneInfo {
+  cursor: pointer;
+  padding: 16px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-left: 4px solid transparent;
+  border-bottom: 1px solid var(--border-light);
+  transition: 0.3s;
+
+  &.active {
+    background: var(--hover-lighblue);
+    border-left: 4px solid var(--accent-primary, #2563EB);
+    transition: 0.3s;
+  }
+
+  &:hover {
+    border-left: 4px solid var(--accent-primary, #2563EB);
+    background: var(--hover-lighblue);
+    transition: 0.3s;
+  }
+
+  &_titleContainer {
+    display: flex;
+    gap: 12px;
+
+    &_title {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      & > h3 {
+        color: var(--text-darkblue-modal);
+        font-family: Inter, sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      & > p {
+        color: var(--text-gray-modal-subtitle);
+        font-family: Inter, sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  &_info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &_session, &_onlineFrom, &_startedGps {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .subtitle {
+        color: var(--text-gray-modal-subtitle);
+        font-family: Inter, sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+      }
+
+      .info {
+        color: var(--text-darkblue-modal);
+        font-family: Inter, sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+      }
+    }
+  }
+}

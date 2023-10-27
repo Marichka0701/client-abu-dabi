@@ -1,0 +1,149 @@
+@import "src/utils/reset";
+@import "src/utils/mixins";
+
+.detailedDroneInfo_container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  width: 100vw;
+  height: 100vh;
+  z-index: 10000;
+  @include flex_center;
+}
+
+.detailedDroneInfo {
+  width: 900px;
+  height: auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  border-radius: 16px;
+  border: 1px solid var(--border-light);
+  background: var(--white);
+
+  &_titleContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    & > div {
+      & > p:nth-child(1) {
+        color: var(--text-darkblue-modal);
+        font-family: Inter, sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 24px; /* 133.333% */
+      }
+
+      & > p:nth-child(2) {
+        color: var(--text-gray-modal-subtitle);
+        font-family: Inter, sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px; /* 150% */
+      }
+    }
+
+    & > p {
+      color: var(--text-gray-modal-subtitle);
+      font-family: Inter, sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px; /* 150% */
+    }
+  }
+
+  &_flightDetails {
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border-light);
+    display: flex;
+    gap: 8px;
+
+    &_icon {
+      width: auto;
+      height: 72px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      //justify-content: center;
+      //align-items: center;
+
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        z-index: 2;
+
+        &.red {
+          background-color: #EF4444;
+        }
+
+        &.green {
+          background-color: #41B871;
+        }
+      }
+
+      .dash {
+        position: absolute;
+        top: 0;
+        left: 5px;
+        height: 100%;
+        width: 1px;
+        background: #D9DBDD;
+        //z-index: -1;
+      }
+    }
+
+    &_coordinates {
+      height: 72px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      & > p {
+        color: var(--text-darkblue-modal);
+        font-family: Inter, sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 24px; /* 171.429% */
+      }
+    }
+  }
+
+  &_droneInfo {
+    display: flex;
+    gap: 32px;
+
+    .left, .right {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      .block {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        .subtitle {
+          color: var(--text-gray-modal-subtitle);
+          font-family: Inter, sans-serif;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 24px; /* 150% */
+        }
+
+        .info {
+          color: var(--text-darkblue-modal);
+          font-family: Inter, sans-serif;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 24px; /* 150% */
+        }
+      }
+    }
+  }
+}

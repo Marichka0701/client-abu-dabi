@@ -12,7 +12,6 @@ ChartJS.register(
 );
 
 const BarChart = ({chartData}) => {
-
     const options = {
         plugins: {
             legend: {

@@ -11,8 +11,6 @@ import {
     Legend,
 } from 'chart.js';
 import {Line} from 'react-chartjs-2';
-// import faker from "faker";
-// import faker from 'faker';
 
 import styles from './LineChart.module.scss';
 
@@ -40,19 +38,18 @@ const options = {
     },
     scales: {
         x: {
-            display: false, // Вимкнути мітки збоку (ось X)
+            display: false,
         },
         y: {
-            display: false, // Вимкнути мітки знизу (ось Y)
+            display: false,
         },
     },
     interaction: {
-        mode: 'index', // Встановити режим взаємодії на 'index'
+        mode: 'index',
     },
     tooltips: {
-        enabled: false, // Вимкнути вспливаючі вікна підказок (попапи)
+        enabled: false,
     },
-    // hover: false,
 };
 
 const generateRandomData = (length, min, max) => {
@@ -61,15 +58,6 @@ const generateRandomData = (length, min, max) => {
 
 const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 const appData = generateRandomData(labels.length, 0, 1000);
-
-function getGradient(ctx, chartArea) {
-    const chartWidth = chartArea.right - chartArea.left;
-    const chartHeight = chartArea.bottom - chartArea.top;
-    const gradient = ctx.createLinearGradient(0, chartArea.bottom, 0, chartArea.top);
-    gradient.addColorStop(0, 'rgba(255, 255, 255, 1'); // replace 'color1' with the start color of your gradient
-    gradient.addColorStop(1, 'rgba(0, 0, 0, 1'); // replace 'color2' with the end color of your gradient
-    return gradient;
-}
 
 export const LineChart = ({type, title, number, percentage, description}) => {
     let backgroundColor = '';

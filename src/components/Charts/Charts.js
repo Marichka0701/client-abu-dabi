@@ -9,8 +9,11 @@ import BlackDronesCharts from "./BlackDronesCharts/BlackDronesCharts";
 const Charts = () => {
     const [selectedChart, setSelectedChart] = useState('All drones');
 
-    const titlesLineChart = [{title: 'Total', type: 'general'},
-        {title: 'White', type: 'progress'}, {title: 'Black', type: 'regress'}];
+    const titlesLineChart = [
+        {title: 'Total', type: 'general'},
+        {title: 'White', type: 'progress'},
+        {title: 'Black', type: 'regress'}
+    ];
     const numbersLineChart = ['2,860', '1,890', '1,390'];
     const labelLineChart = ['from previous month'];
     const percentageLineChart = ['2%', '60%', '40%'];

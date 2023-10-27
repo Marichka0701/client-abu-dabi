@@ -378,49 +378,14 @@ const AppMapBox = ({selectedOption}) => {
 
         const markers = geoJson.features;
 
-        // for (const marker of markers) {
-        //     const el = document.createElement('div');
-        //     el.style.backgroundImage = `url(${sensor})`;
-        //
-        //     if (radarsChecked) {
-        //         el.className = 'marker';
-        //
-        //         el.addEventListener('mouseenter', () => {
-        //             setModalIsOpen(true);
-        //             setSelectedSensor(marker.properties.message);
-        //         });
-        //
-        //         el.addEventListener('mouseleave', () => {
-        //             setModalIsOpen(false);
-        //             setSelectedSensor(marker.properties.message);
-        //         });
-        //
-        //         const popupContent = document.createElement('div');
-        //
-        //         ReactDOM.render(<ModalSensor selectedSensor={marker.properties.message}/>, popupContent);
-        //
-        //         const popup = new mapboxgl.Popup({offset: 25}).setDOMContent(popupContent);
-        //
-        //         new mapboxgl.Marker(el)
-        //             .setLngLat(marker.geometry.coordinates)
-        //             .addTo(map)
-        //             .setPopup(popup);
-        //     } else {
-        //         el.className = 'marker none';
-        //     }
-        // }
-
         for (const marker of markers) {
             const el = document.createElement('div');
             el.style.backgroundImage = `url(${sensor})`;
 
             if (radarsChecked) {
                 el.className = 'marker';
-                // console.log(el)
-                // console.log('true');
 
                 if (!radarsLoaded) {
-                    console.log('radarsLoaded')
                     el.addEventListener('mouseenter', () => {
                         setModalIsOpen(true);
                         setSelectedSensor(marker.properties.message);
@@ -444,11 +409,6 @@ const AppMapBox = ({selectedOption}) => {
 
                     setRadarsLoaded(true);
                 }
-            } else {
-                // console.log('false');
-                el.className = 'none';
-                el.style.display = 'none';
-                // console.log(el)
             }
         }
 
@@ -518,6 +478,12 @@ const AppMapBox = ({selectedOption}) => {
                                 'icon-size': 0.5,
                             },
                         });
+
+                        // if (whiteDronesChecked) {
+                        //     mapRef.current.setLayoutProperty(droneId + '_circle', 'visibility', 'none');
+                        // } else {
+                        //     mapRef.current.setLayoutProperty(droneId + '_circle', 'visibility', 'visible');
+                        // }
                     });
 
                 });
@@ -546,8 +512,17 @@ const AppMapBox = ({selectedOption}) => {
                         'layout': {
                             'icon-image': droneId,
                             'icon-size': 0.5,
+                            // 'visibility': whiteDronesChecked ? 'visible' : 'none',
                         },
                     });
+
+                    // setTimeout(() => {
+                    if (whiteDronesChecked) {
+                        mapRef.current.setLayoutProperty(droneId, 'visibility', 'visible');
+                    } else {
+                        mapRef.current.setLayoutProperty(droneId, 'visibility', 'none');
+                    }
+                    // }, 0);
                 });
 
                 const animateMarker = (timestamp) => {
@@ -592,12 +567,60 @@ const AppMapBox = ({selectedOption}) => {
             });
         };
 
+        if (whiteDronesChecked && mapRef.current) {
+            // AddWhiteDronesToMap();
+            setTimeout(() => {
+            const map = mapRef.current;
+            // console.log(map?.getStyle())
+            const droneLayers = map.getStyle().layers.filter(layer => layer.id.startsWith('drone_'));
+                for (const layer of droneLayers) {
+                    console.log(layer)
+                    map.setLayoutProperty(layer.id, 'visibility', 'visible');
+                }
+            }, 50)
+
+            // if (!!map) {
+            //     console.log(map?.getStyle())
+            //     const droneLayers = map.getStyle().layers.filter(layer => layer.id.startsWith('drone_'));
+            //     for (const layer of droneLayers) {
+            //         console.log(layer)
+            //         map.setLayoutProperty(layer.id, 'visibility', 'visible');
+            //     }
+            // }
+        } else {
+            const map = mapRef.current;
+            const droneLayers = map.getStyle().layers.filter(layer => layer.id.startsWith('drone_'));
+            for (const layer of droneLayers) {
+                map.setLayoutProperty(layer.id, 'visibility', 'none');
+            }
+        }
+
+        // if (whiteDronesChecked) {
+        //     // AddWhiteDronesToMap();
+        //     const map = mapRef.current;
+        //     if (map && map.isStyleLoaded()) {
+        //         const droneLayers = map.getStyle().layers.filter(layer => layer.id.startsWith('drone_'));
+        //         for (const layer of droneLayers) {
+        //             console.log(layer)
+        //             // map.setLayoutProperty(layer.id, 'visibility', 'visible');
+        //         }
+        //     }
+        // } else {
+        //     const map = mapRef.current;
+        //     if (map && map.isStyleLoaded()) {
+        //         const droneLayers = map.getStyle().layers.filter(layer => layer.id.startsWith('drone_'));
+        //         for (const layer of droneLayers) {
+        //             map.setLayoutProperty(layer.id, 'visibility', 'none');
+        //         }
+        //     }
+        // }
+
 
         const AddBlackDronesToMap = () => {
             // Решта вашого коду для чорних дронів
         };
 
-        whiteDronesChecked && AddWhiteDronesToMap();
+        AddWhiteDronesToMap();
         // blackDronesChecked && AddBlackDronesToMap();
     }, [blackDronesChecked, whiteDronesChecked, radarsChecked]);
 

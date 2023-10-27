@@ -46,7 +46,7 @@ const DetailedDroneInfo = ({setModalIsOpen, drone}) => {
                        </div>
                        <div className={styles.block}>
                            <p className={styles.subtitle}>End Position</p>
-                           <p className={styles.info}>46.885250, 24.556808</p>
+                           <p className={styles.info}>{process.env.REACT_APP_ABU_DABI_LONGITUDE}, {process.env.REACT_APP_ABU_DABI_LATITUDE}</p>
                            {/*<p className={styles.info}>71.413961, 51.140528 </p> // astana*/}
                            {/*<p className={styles.info}>54.382988, 24.400745</p> // абу дабі*/}
                        </div>

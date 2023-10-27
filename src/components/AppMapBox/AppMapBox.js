@@ -33,7 +33,8 @@ const AppMapBox = ({selectedOption}) => {
         if (!mapRef.current) {
             mapRef.current = new mapboxgl.Map({
                 container: 'map',
-                style: process.env.REACT_APP_MAPBOX_STYLE,
+                style: 'mapbox://styles/nazarvergyn/clnszvr7o00jk01pl5uuj47s4',
+                // style: process.env.REACT_APP_MAPBOX_STYLE,
                 center: [process.env.REACT_APP_ABU_DABI_LONGITUDE, process.env.REACT_APP_ABU_DABI_LATITUDE],
                 zoom: 10.85,
             });

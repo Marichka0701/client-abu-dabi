@@ -3,6 +3,8 @@ import React, {useState} from 'react';
 import styles from './Charts.module.scss';
 import {LineChart} from "./LineChart/LineChart";
 import AllDronesCharts from "./AllDronesCharts/AllDronesCharts";
+import WhiteDronesCharts from "./WhiteDronesCharts/WhiteDronesCharts";
+import BlackDronesCharts from "./BlackDronesCharts/BlackDronesCharts";
 
 const Charts = () => {
     const [selectedChart, setSelectedChart] = useState('All drones');
@@ -22,6 +24,7 @@ const Charts = () => {
                     {
                         titlesLineChart.map((item, index) =>
                             <LineChart
+                                key={index}
                                 type={item.type}
                                 title={item.title}
                                 number={numbersLineChart[index]}
@@ -30,9 +33,6 @@ const Charts = () => {
                             />
                         )
                     }
-                    {/*<LineChart/>*/}
-                    {/*<LineChart/>*/}
-                    {/*<LineChart/>*/}
                 </div>
             </div>
 
@@ -57,6 +57,14 @@ const Charts = () => {
 
                 {
                     selectedChart === 'All drones' && <AllDronesCharts/>
+                }
+
+                {
+                    selectedChart === 'White drones' && <WhiteDronesCharts/>
+                }
+
+                {
+                    selectedChart === 'Black drones' && <BlackDronesCharts/>
                 }
             </div>
         </div>

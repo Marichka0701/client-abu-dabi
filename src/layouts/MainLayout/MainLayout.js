@@ -11,8 +11,8 @@ import History from "../../components/History/History";
 import DetailedDroneInfo from "../../components/DetailedDroneInfo/DetailedDroneInfo";
 import AllDronesCharts from "../../components/Charts/AllDronesCharts/AllDronesCharts";
 import {UserData} from "../../constants/UserData";
-import BarChart from "../../components/Charts/AllDronesCharts/BarChart/BarChart";
-import {allDronesChartStatistic} from "../../constants/staticticsChartAllDrones";
+import BarChart from "../../components/Charts/BarChart/BarChart";
+import {allDronesChartStatistic} from "../../constants/charts/staticticsChartAllDrones";
 import Charts from "../../components/Charts/Charts";
 
 const MainLayout = () => {

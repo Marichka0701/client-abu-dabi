@@ -62,6 +62,15 @@ const generateRandomData = (length, min, max) => {
 const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 const appData = generateRandomData(labels.length, 0, 1000);
 
+function getGradient(ctx, chartArea) {
+    const chartWidth = chartArea.right - chartArea.left;
+    const chartHeight = chartArea.bottom - chartArea.top;
+    const gradient = ctx.createLinearGradient(0, chartArea.bottom, 0, chartArea.top);
+    gradient.addColorStop(0, 'rgba(255, 255, 255, 1'); // replace 'color1' with the start color of your gradient
+    gradient.addColorStop(1, 'rgba(0, 0, 0, 1'); // replace 'color2' with the end color of your gradient
+    return gradient;
+}
+
 export const LineChart = ({type, title, number, percentage, description}) => {
     let backgroundColor = '';
     let borderColor = '';
@@ -85,11 +94,7 @@ export const LineChart = ({type, title, number, percentage, description}) => {
                 label: title,
                 data: appData,
                 borderColor,
-                // borderColor: '#41B871',
-                // backgroundColor: 'rgba(53, 162, 235, 0.5)',
-                // backgroundColor: '#0DE57630',
                 backgroundColor,
-                // background: 'linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(13,229,118,1) 100%)',
             },
         ],
     };

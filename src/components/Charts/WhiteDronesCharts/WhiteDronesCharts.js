@@ -1,15 +1,15 @@
 import React, {useState} from 'react';
 
-import {allDronesChartStatistic} from "../../../constants/charts/staticticsChartAllDrones";
 import BarChart from "../BarChart/BarChart";
+import {whiteDronesChartStatistic} from "../../../constants/charts/staticticsChartWhiteDrones";
 
-const AllDronesCharts = () => {
+const WhiteDronesCharts = () => {
     const [chartData, setChartData] = useState({
-        labels: allDronesChartStatistic.map((data) => data.month),
+        labels: whiteDronesChartStatistic.map((data) => data.month),
         datasets: [
             {
                 label: '',
-                data: allDronesChartStatistic.map((data) => data.userGain),
+                data: whiteDronesChartStatistic.map((data) => data.userGain),
                 backgroundColor: [
                     "#3B82F6",
                     "#CCDCFF",
@@ -35,4 +35,4 @@ const AllDronesCharts = () => {
     );
 };
 
-export default AllDronesCharts;
+export default WhiteDronesCharts;

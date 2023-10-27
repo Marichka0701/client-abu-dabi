@@ -1,20 +1,20 @@
-export const allDronesChartStatistic = [
+export const whiteDronesChartStatistic = [
     {
         id: 1,
         month: 'Jan',
-        userGain: 80000,
+        userGain: 50000,
         userLost: 823,
     },
     {
         id: 2,
         month: 'Feb',
-        userGain: 45677,
+        userGain: 35677,
         userLost: 345,
     },
     {
         id: 3,
         month: 'Mar',
-        userGain: 78888,
+        userGain: 18888,
         userLost: 555,
     },
     {
@@ -26,19 +26,19 @@ export const allDronesChartStatistic = [
     {
         id: 5,
         month: 'May',
-        userGain: 4300,
+        userGain: 300,
         userLost: 234,
     },
     {
         id: 6,
         month: 'Jun',
-        userGain: 14300,
+        userGain: 12300,
         userLost: 234,
     },
     {
         id: 7,
         month: 'Jul',
-        userGain: 8100,
+        userGain: 58100,
         userLost: 234,
     },
     {
@@ -50,25 +50,25 @@ export const allDronesChartStatistic = [
     {
         id: 9,
         month: 'Sep',
-        userGain: 4300,
+        userGain: 76300,
         userLost: 234,
     },
     {
         id: 10,
         month: 'Oct',
-        userGain: 4900,
+        userGain: 49001,
         userLost: 234,
     },
     {
         id: 11,
         month: 'Nov',
-        userGain: 4800,
+        userGain: 48030,
         userLost: 234,
     },
     {
         id: 12,
         month: 'Dec',
-        userGain: 4500,
+        userGain: 65167,
         userLost: 234,
     },
 ];

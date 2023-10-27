@@ -28,7 +28,7 @@ const AppMapBox = ({selectedOption}) => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
+        mapboxgl.accessToken = 'pk.eyJ1IjoibmF6YXJ2ZXJneW4iLCJhIjoiY2s1djY3bjA2MDh0bTNtcXc0ODR2M2h1dSJ9.PaLSEgPewauf2KVwkv9RTQ';
 
         if (!mapRef.current) {
             mapRef.current = new mapboxgl.Map({

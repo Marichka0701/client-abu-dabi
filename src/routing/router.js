@@ -9,11 +9,13 @@ const user = localStorage.getItem("token");
 export const router = createBrowserRouter([
     {
         index: true,
-        element: user ? <Navigate to={MAIN_ROUTES.LIVE_TRACKING}/> : <Navigate to={MAIN_ROUTES.LOGIN}/>
+        element: <Navigate to={MAIN_ROUTES.LIVE_TRACKING}/>
+        // element: user ? <Navigate to={MAIN_ROUTES.LIVE_TRACKING}/> : <Navigate to={MAIN_ROUTES.LOGIN}/>
     },
     {
         path: MAIN_ROUTES.LIVE_TRACKING,
-        element: user ? <MainLayout /> : <Navigate to={MAIN_ROUTES.LOGIN} />,
+        // element: user ? <MainLayout /> : <Navigate to={MAIN_ROUTES.LOGIN} />,
+        element: <MainLayout/>,
     },
     {
         path: MAIN_ROUTES.LOGIN,

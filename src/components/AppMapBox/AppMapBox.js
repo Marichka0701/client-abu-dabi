@@ -90,10 +90,6 @@ const AppMapBox = ({selectedOption}) => {
         }
 
         const AddWhiteDronesToMap = () => {
-            // if (!whiteDronesChecked) {
-            //     return;
-            // }
-
             const addDroneToMap = () => {
                 const placementTime = new Date();
 
